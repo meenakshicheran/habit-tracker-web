@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --surface: #fafafa;
+  --surface-raised: #f4f4f5;
+  --border: #e5e7eb;
+  --border-subtle: #f3f4f6;
+  --text-primary: #111111;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-fg: #ffffff;
+  --ring: #6366f1;
+  --heatmap-0: #f3f4f6;
+  --heatmap-1: #e0e7ff;
+  --heatmap-2: #818cf8;
+  --heatmap-3: #6366f1;
+  --heatmap-4: #4f46e5;
+  /* theme-adaptive utility vars */
+  --card-bg: rgba(0,0,0,0.03);
+  --card-border: rgba(0,0,0,0.08);
+  --card-border-hover: rgba(0,0,0,0.2);
+  --divider: rgba(0,0,0,0.07);
+  --icon-bg: rgba(0,0,0,0.06);
+  --nav-bg: rgba(255,255,255,0.9);
+  --overlay-active: rgba(99,102,241,0.08);
+  --check-border: rgba(0,0,0,0.2);
+  --avatar-bg: #f3f4f6;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --surface: #111111;
+  --surface-raised: #1c1c1c;
+  --border: rgba(255,255,255,0.08);
+  --border-subtle: rgba(255,255,255,0.04);
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-fg: #ffffff;
+  --ring: #6366f1;
+  --heatmap-0: #1a1a1a;
+  --heatmap-1: #1e1b4b;
+  --heatmap-2: #3730a3;
+  --heatmap-3: #4f46e5;
+  --heatmap-4: #6366f1;
+  /* theme-adaptive utility vars */
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+  --card-border-hover: rgba(255,255,255,0.25);
+  --divider: rgba(255,255,255,0.06);
+  --icon-bg: rgba(255,255,255,0.08);
+  --nav-bg: rgba(10,10,10,0.85);
+  --overlay-active: rgba(255,255,255,0.06);
+  --check-border: rgba(255,255,255,0.2);
+  --avatar-bg: #111111;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  letter-spacing: -0.01em;
+}
+
+/* Frosted glass card */
+.glass {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes flame-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-style: normal;
+}
+
+@keyframes coach-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(99,102,241,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(99,102,241,0); }
+  100% { box-shadow: 0 0 0 0 rgba(99,102,241,0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing-dot {
+  0%, 80%, 100% { transform: scale(1); opacity: 0.5; }
+  40%           { transform: scale(1.4); opacity: 1; }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
